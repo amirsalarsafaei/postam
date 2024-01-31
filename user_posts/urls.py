@@ -18,10 +18,10 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('user-posts/', get_user_posts, "get-user-posts"),
-    path('vitrine/create', create_vitrine, "create-vitrine"),
-    path('vitrine/list', get_vitrines, "get-user-vitrines"),
-    path('vitrine/<slug:str>', get_vitrine, "get-vitrine"),
+    path('user-posts/', get_user_posts, name="get-user-posts"),
+    path('vitrine/create', create_vitrine, name="create-vitrine"),
+    path('vitrine/list', get_vitrines, name="get-user-vitrines"),
+    path('vitrine/<slug:str>', get_vitrine, name="get-vitrine"),
 ]
 
 app_name = 'user_posts'
