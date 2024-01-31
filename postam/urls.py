@@ -18,5 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path("oauth/", include("oauth.urls", namespace="oauth")),
-
+    path("postam/", include("user_posts.urls", namespace="postam"))
 ]
