@@ -1,0 +1,12 @@
+asgiref==3.7.2
+cffi==1.16.0
+cryptography==41.0.4
+Django==5.0.1
+django-filter==23.5
+djangorestframework==3.14.0
+Markdown==3.5.2
+psycopg==3.1.12
+pycparser==2.21
+pytz==2023.4
+sqlparse==0.4.4
+typing_extensions==4.9.0
