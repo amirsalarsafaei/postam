@@ -46,7 +46,7 @@ CSRF_TRUSTED_ORIGINS = [
 if DEBUG:
     HOST = "http://localhost:8000"
 else:
-    HOST = "https://team4.hackathon.divar.codes/postam"
+    HOST = "https://team10.hackathon.divar.codes/api"
 
 
 OAUTH_INFO_SESSION_KEY = "oauth"
@@ -97,7 +97,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-WSGI_APPLICATION = 'mrdiag.wsgi.application'
+WSGI_APPLICATION = 'postam.wsgi.application'
 
 
 
