@@ -32,7 +32,7 @@ ENCRYPTION_KEY = os.environ.get("ENCRYPTION_SECRET", Fernet.generate_key().decod
 DEBUG = to_bool(os.environ.get("DEBUG", default=True))
 APP_SLUG = os.environ.get("APP_SLUG", 'notch-atom-samurai')
 API_KEY = os.environ.get("API_KEY")
-
+OAUTH_CALLBACK = os.environ.get("OAUTH_CALLBACK")
 ALLOWED_HOSTS = [
     "*"
 ]

@@ -45,7 +45,7 @@ def create_redirect_link(request, scopes, state_data: str = "") -> str:
 
     oauth_url = oauth_client.create_redirect_link(
         app_slug=settings.APP_SLUG,
-        redirect_uri=settings.HOST + reverse('oauth:callback'),
+        redirect_uri=settings.OAUTH_CALLBACK,
         scopes=scopes,
         state=state
     )
