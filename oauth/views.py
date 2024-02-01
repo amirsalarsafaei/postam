@@ -56,9 +56,6 @@ def oauth_callback(request):
     if code is None or state is None:
         raise AuthenticationFailed("code or state can't be empty")
 
-    if state != state_in_session:
-        raise AuthenticationFailed("invalid state")
-
     oauth_data = oauth_controller.get_oauth(code=code)
     try:
         phones = oauth_controller.get_phone_numbers(oauth_data.access_token)
