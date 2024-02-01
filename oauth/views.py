@@ -49,11 +49,10 @@ def oauth_callback(request):
 
     serializer = StateCodeSerializer(data=request.data)
 
-    if not serializer.is_valid():
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    serializer.is_valid(raise_exception=True)
 
-    code = serializer.code
-    state = serializer.state
+    code = serializer.validated_data['code']
+    state = serializer.validated_data['state']
     if code is None or state is None:
         return AuthenticationFailed("code or state can't be empty")
 
