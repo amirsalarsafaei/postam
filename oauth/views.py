@@ -54,10 +54,10 @@ def oauth_callback(request):
     code = serializer.validated_data['code']
     state = serializer.validated_data['state']
     if code is None or state is None:
-        return AuthenticationFailed("code or state can't be empty")
+        raise AuthenticationFailed("code or state can't be empty")
 
     if state != state_in_session:
-        return AuthenticationFailed("invalid state")
+        raise AuthenticationFailed("invalid state")
 
     oauth_data = oauth_controller.get_oauth(code=code)
     try:
