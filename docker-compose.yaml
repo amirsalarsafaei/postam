@@ -1,0 +1,21 @@
+services:
+  postam:
+    build: .
+    image: "postam"
+    platform: linux/arm64/v8
+    ports:
+      - 8000:8000
+    env_file:
+      -  "./.env"
+      -  ./.envdocker
+    volumes:
+      - ./:/app
+    depends_on:
+      - postgres
+  postgres:
+    image: "postgres:14-bullseye"
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: complex-password
+      POSTGRES_USER: postam
+      POSTGRES_DB: postam

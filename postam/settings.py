@@ -111,7 +111,7 @@ DATABASES = {
         'NAME': 'postam',
         'USER': 'postam',
         'PASSWORD': 'complex-password',
-        'HOST': 'localhost',
+        'HOST': os.environ.get("DB_HOST", "localhost"),
         'PORT': '5432',
     }
 }
